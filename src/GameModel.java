@@ -42,9 +42,10 @@ public class GameModel {
         enemies.clear();
         int count = 4 + waveNumber;
         double spacing = 1000.0 / (count + 1);
+        int enemyHealth = 1 + (waveNumber - 1) / 5;
         for (int i = 0; i < count; i++) {
             double initialProgress = -spacing * (count - 1 - i);
-            enemies.add(new Enemy(initialProgress));
+            enemies.add(new Enemy(initialProgress, enemyHealth));
         }
     }
 
@@ -130,9 +131,11 @@ public class GameModel {
         for (Projectile projectile : new ArrayList<>(projectiles)) {
             for (Enemy enemy : new ArrayList<>(enemies)) {
                 if (projectile.collidesWith(enemy)) {
-                    enemy.setAlive(false);
+                    boolean killed = enemy.takeDamage(1);
                     projectile.setActive(false);
-                    addCoins(5);
+                    if (killed) {
+                        addCoins(5);
+                    }
                 }
             }
         }
@@ -159,10 +162,12 @@ public class GameModel {
     public static class Enemy {
         private boolean alive;
         private double progress;
+        private int health;
 
-        public Enemy(double progress) {
+        public Enemy(double progress, int health) {
             this.alive = true;
             this.progress = progress;
+            this.health = health;
         }
 
         public void updatePosition(int waveNumber) {
@@ -176,6 +181,15 @@ public class GameModel {
 
         public boolean isAlive() {
             return alive;
+        }
+
+        public boolean takeDamage(int amount) {
+            health -= amount;
+            if (health <= 0) {
+                alive = false;
+                return true;
+            }
+            return false;
         }
 
         public void setAlive(boolean alive) {
