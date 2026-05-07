@@ -70,8 +70,12 @@ public class GameModel {
         long currentTime = System.currentTimeMillis();
         if (currentTime - lastShotTime >= SHOT_COOLDOWN) {
             int shots = 1 + towerUpgradeLevel;
+            double baseAngle = towerRotation - 90;
+            double spreadStep = 12.0;
+            double startAngle = baseAngle - spreadStep * (shots - 1) / 2.0;
             for (int i = 0; i < shots; i++) {
-                projectiles.add(new Projectile(towerRotation - 90));
+                double angle = startAngle + spreadStep * i;
+                projectiles.add(new Projectile(angle));
             }
             lastShotTime = currentTime;
         }

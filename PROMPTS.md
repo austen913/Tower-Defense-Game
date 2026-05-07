@@ -60,4 +60,6 @@ Prompt 6: I want them to each spawn at the start. they should take turns spawnin
 
 Result: they take turns spawning at the start now
 
-Prompt 7:
+Prompt 7: when I press E to upgrade, I see that I lose money, however I am not gaining an extra shot. I want upgrading to add an extra shot. it should be fired in a spread pattern.
+
+Result: upgrading now adds an extra bullet. it shoots in a spread patter.
