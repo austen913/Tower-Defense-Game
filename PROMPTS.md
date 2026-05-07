@@ -44,4 +44,7 @@ Fix: close but not quite, it shoots out the bottom of the square now
 
 Result: it shoots out the top now
 
-Prompt 3:
+Prompt 3: I want there to be a 1 second delay before being able to shoot again
+
+Result: there is a delay between shots
+

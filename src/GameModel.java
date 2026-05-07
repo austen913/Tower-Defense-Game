@@ -7,6 +7,8 @@ public class GameModel {
     private boolean gameOver;
     private double towerRotation;
     private int towerUpgradeLevel;
+    private long lastShotTime;
+    private static final long SHOT_COOLDOWN = 1000;
 
     private final List<Enemy> enemies;
     private final List<Projectile> projectiles;
@@ -23,6 +25,7 @@ public class GameModel {
         gameOver = false;
         towerRotation = 0.0;
         towerUpgradeLevel = 0;
+        lastShotTime = 0;
         enemies.clear();
         projectiles.clear();
         spawnWave();
@@ -62,9 +65,13 @@ public class GameModel {
     }
 
     public void fireTower() {
-        int shots = 1 + towerUpgradeLevel;
-        for (int i = 0; i < shots; i++) {
-            projectiles.add(new Projectile(towerRotation - 90));
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastShotTime >= SHOT_COOLDOWN) {
+            int shots = 1 + towerUpgradeLevel;
+            for (int i = 0; i < shots; i++) {
+                projectiles.add(new Projectile(towerRotation - 90));
+            }
+            lastShotTime = currentTime;
         }
     }
 
