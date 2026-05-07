@@ -38,6 +38,12 @@ public class GameController {
                     case KeyEvent.VK_E:
                         handleUpgrade();
                         break;
+                    case KeyEvent.VK_F:
+                        handleUpgradeDamage();
+                        break;
+                    case KeyEvent.VK_C:
+                        handleUpgradeCooldown();
+                        break;
                     case KeyEvent.VK_R:
                         handleRestart();
                         break;
@@ -64,6 +70,14 @@ public class GameController {
 
     private void handleUpgrade() {
         model.upgradeTower();
+    }
+
+    private void handleUpgradeDamage() {
+        model.upgradeDamage();
+    }
+
+    private void handleUpgradeCooldown() {
+        model.upgradeCooldown();
     }
 
     private void handleRestart() {

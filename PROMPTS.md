@@ -71,3 +71,15 @@ Result: enemies get more hp every 5 waves
 Prompt 9: I want to add an option to restart the game by pressing R. it should show up on the game over screen.
 
 Result: when the game over screen pops up you can press R to restart instead of having to close the window and open a new one.
+
+Prompt 10: I want to add other upgrades:
+F key = +1 damage
+C key = shorter shooting cooldown
+
+The price for the upgrades should all be shared meaning if you buy an upgrade for 50 coins the next upgrade should be 100 no matter which one was bought.
+
+Result: other upgrades were added but each upgrade adds a bullet when it should only be E adding one
+
+Fix: I want it so only E adds a bullet. right now all upgrades add a bullet
+
+Result: upgrades now work as intended

@@ -7,8 +7,10 @@ public class GameModel {
     private boolean gameOver;
     private double towerRotation;
     private int towerUpgradeLevel;
+    private int shotUpgradeLevel;
+    private int towerDamage;
+    private long towerCooldown;
     private long lastShotTime;
-    private static final long SHOT_COOLDOWN = 1000;
 
     private final List<Enemy> enemies;
     private final List<Projectile> projectiles;
@@ -25,6 +27,9 @@ public class GameModel {
         gameOver = false;
         towerRotation = 0.0;
         towerUpgradeLevel = 0;
+        shotUpgradeLevel = 0;
+        towerDamage = 1;
+        towerCooldown = 1000;
         lastShotTime = 0;
         enemies.clear();
         projectiles.clear();
@@ -58,6 +63,32 @@ public class GameModel {
         if (coins >= cost) {
             coins -= cost;
             towerUpgradeLevel++;
+            shotUpgradeLevel++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean upgradeDamage() {
+        int cost = getUpgradeCost();
+        if (coins >= cost) {
+            coins -= cost;
+            towerUpgradeLevel++;
+            towerDamage++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean upgradeCooldown() {
+        int cost = getUpgradeCost();
+        if (coins >= cost) {
+            coins -= cost;
+            towerUpgradeLevel++;
+            towerCooldown -= 100;
+            if (towerCooldown < 200) {
+                towerCooldown = 200;
+            }
             return true;
         }
         return false;
@@ -69,8 +100,8 @@ public class GameModel {
 
     public void fireTower() {
         long currentTime = System.currentTimeMillis();
-        if (currentTime - lastShotTime >= SHOT_COOLDOWN) {
-            int shots = 1 + towerUpgradeLevel;
+        if (currentTime - lastShotTime >= towerCooldown) {
+            int shots = 1 + shotUpgradeLevel;
             double baseAngle = towerRotation - 90;
             double spreadStep = 12.0;
             double startAngle = baseAngle - spreadStep * (shots - 1) / 2.0;
@@ -131,7 +162,7 @@ public class GameModel {
         for (Projectile projectile : new ArrayList<>(projectiles)) {
             for (Enemy enemy : new ArrayList<>(enemies)) {
                 if (projectile.collidesWith(enemy)) {
-                    boolean killed = enemy.takeDamage(1);
+                    boolean killed = enemy.takeDamage(towerDamage);
                     projectile.setActive(false);
                     if (killed) {
                         addCoins(5);
