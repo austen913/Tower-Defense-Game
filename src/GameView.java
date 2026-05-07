@@ -86,6 +86,9 @@ public class GameView extends JFrame {
             g.setColor(Color.RED);
             for (GameModel.Enemy enemy : model.getEnemies()) {
                 double progress = enemy.getProgress();
+                if (progress < 0) {
+                    continue;
+                }
                 double x = 50 + (progress / 1000.0) * 700;
                 g.fillOval((int) x - 20, 145, 40, 40);
             }

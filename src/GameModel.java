@@ -43,7 +43,8 @@ public class GameModel {
         int count = 4 + waveNumber;
         double spacing = 1000.0 / (count + 1);
         for (int i = 0; i < count; i++) {
-            enemies.add(new Enemy(i * spacing));
+            double initialProgress = -spacing * (count - 1 - i);
+            enemies.add(new Enemy(initialProgress));
         }
     }
 
@@ -205,6 +206,9 @@ public class GameModel {
         }
 
         public boolean collidesWith(Enemy enemy) {
+            if (!enemy.isAlive() || enemy.getProgress() < 0) {
+                return false;
+            }
             double radians = Math.toRadians(angle);
             double projX = 400 + distance * Math.cos(radians);
             double projY = 400 + distance * Math.sin(radians);
@@ -212,7 +216,7 @@ public class GameModel {
             double enemyY = 165;
             double dx = projX - enemyX;
             double dy = projY - enemyY;
-            return enemy.isAlive() && Math.sqrt(dx * dx + dy * dy) < 30;
+            return Math.sqrt(dx * dx + dy * dy) < 30;
         }
 
         public boolean isActive() {

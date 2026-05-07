@@ -55,3 +55,9 @@ Result: the enemies are bigger now
 Prompt 5: right now it seems like there is only one enemy. I want there to be 5 for the first wave and then it should increase by 1 for each wave. they should be space out
 
 Result: there are now multiple spaced out enemies
+
+Prompt 6: I want them to each spawn at the start. they should take turns spawning
+
+Result: they take turns spawning at the start now
+
+Prompt 7:
