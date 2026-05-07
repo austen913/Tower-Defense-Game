@@ -41,8 +41,9 @@ public class GameModel {
     public void spawnWave() {
         enemies.clear();
         int count = 4 + waveNumber;
+        double spacing = 1000.0 / (count + 1);
         for (int i = 0; i < count; i++) {
-            enemies.add(new Enemy());
+            enemies.add(new Enemy(i * spacing));
         }
     }
 
@@ -154,9 +155,9 @@ public class GameModel {
         private boolean alive;
         private double progress;
 
-        public Enemy() {
+        public Enemy(double progress) {
             this.alive = true;
-            this.progress = 0.0;
+            this.progress = progress;
         }
 
         public void updatePosition(int waveNumber) {

@@ -52,4 +52,6 @@ Prompt 4: i want the enemies to be twice as big
 
 Result: the enemies are bigger now
 
-Prompt 5:
+Prompt 5: right now it seems like there is only one enemy. I want there to be 5 for the first wave and then it should increase by 1 for each wave. they should be space out
+
+Result: there are now multiple spaced out enemies
