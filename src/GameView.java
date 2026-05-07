@@ -57,6 +57,7 @@ public class GameView extends JFrame {
             drawEnemies(g);
             drawProjectiles(g);
             drawHUD(g);
+            drawControls(g);
         }
 
         private void drawBackground(Graphics g) {
@@ -116,6 +117,18 @@ public class GameView extends JFrame {
                 g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
                 g.drawString("Press R to restart", 280, 360);
             }
+        }
+
+        private void drawControls(Graphics g) {
+            g.setColor(Color.WHITE);
+            g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 14));
+            int y = 490;
+            g.drawString("Controls:", 20, y);
+            g.drawString("Left/Right: Rotate Tower", 20, y + 20);
+            g.drawString("Space: Fire", 20, y + 40);
+            g.drawString("E: +1 Shot", 20, y + 60);
+            g.drawString("F: +1 Damage", 20, y + 80);
+            g.drawString("C: Faster Cooldown", 20, y + 100);
         }
     }
 }

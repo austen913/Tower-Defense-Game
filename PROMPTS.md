@@ -83,3 +83,12 @@ Result: other upgrades were added but each upgrade adds a bullet when it should 
 Fix: I want it so only E adds a bullet. right now all upgrades add a bullet
 
 Result: upgrades now work as intended
+
+Prompt 11: add the controls in the bottom left of the screen
+
+Result: controls are displayed in the bottom left but it is cut off a little
+
+Fix: can you shift every control up a little bit, the bottom is being cut off because im not seeing C: faster cooldown
+
+Result: all controls are displayed
+
