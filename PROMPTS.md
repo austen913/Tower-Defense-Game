@@ -1,5 +1,35 @@
 Prompt 1: I want to build a Tower Defense Game in Java with Swing using MVC. Before we write any code, interview me. Ask me one question at a time about gameplay, controls, win and loss conditions, and what should be on the screen. After about 8 questions, summarize what I told you as a one-page spec organized by Model, View, and Controller.
 
+Q: What is the basic premise of your game? (e.g., defend a base, protect a goal, survive waves of enemies?)
+A: defend enemies from the end of the track
+
+Q: How do enemies work? (e.g., do they come in waves, have different types, spawn continuously, or something else?)
+A: they should come in waves starting with 5 enemies then the enemy count should increase by 1 each wave and they should also become faster
+
+Q: How do towers work? (e.g., do you place them on the map, do they have different types, cost resources, have upgrades?)
+A: the track should loop around the tower with the tower in the center of the loop. it should only be one tower that you can upgrade which adds an extra shot. you can. it should be controlled by the player. arrow keys to rotate it, space to shoot.
+
+Q: How does the upgrade system work? How does the player get resources or currency to upgrade the tower?
+A: defeating an enemy should give 5 coins, and defeating a wave should give 100 coins
+
+Q: What is the win condition? (e.g., survive all waves, reach a certain score, complete a certain number of waves?)
+A: it should be endless, see as far as you can get without dying
+
+Q: What is the loss/game over condition? (e.g., if an enemy reaches the end, health drops to zero, etc?)
+A: it should be game over if an enemy reaches the end
+
+Q: What information should be displayed on screen? (e.g., current wave number, coins, enemies remaining, tower stats, controls help?)
+A: the current wave and amount of coins should be displayed in the top left
+
+Q: Are there any other special features or visual preferences? (e.g., pause functionality, difficulty settings, visual effects for shots?)
+A: nope i want this to be a simple game
+
+Summary of your game:
+
+Model: Endless wave-based defense with a single rotating tower, progressive difficulty (more enemies, faster speeds), and a coin economy (5 coins/enemy, 100/wave)
+View: Circular track around a center tower, minimal HUD (wave + coins in top left only), simple visuals
+Controller: Arrow keys to rotate, Space to shoot; tight input-to-action mapping
+
 Result: It created a new file with the spec of my game
 
 Prompt 2: I did the spec dump

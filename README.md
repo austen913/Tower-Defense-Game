@@ -70,3 +70,6 @@
 
 ## "Done" for this week
 Enemies move on the track towards the end. Tower is able to fire bullets. E upgrades the tower and adds and extra shot if the player has enough money. The enemies die if they are shot giving the player money. There are multiple waves that get harder.
+
+## What I Made
+This is a tower defense game. There are endless waves of enemies that spawn. It starts with 5 enemies then each new wave adds an enemy. The enemies move faster every wave and every 5 waves their hp increases by one. They travel accross the track to the end. If they reach the end it is game over. To defeat the enemies press the space bar to shoot a bullet out of the tower. Defeating enemies and completing waves gives the player coins. These coins are used for upgrading your tower with different upgrades. There are three to choose from: +1 bullet, +1 damage, faster cooldown.
