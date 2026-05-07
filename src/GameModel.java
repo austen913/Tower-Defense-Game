@@ -211,7 +211,7 @@ public class GameModel {
             double enemyY = 165;
             double dx = projX - enemyX;
             double dy = projY - enemyY;
-            return enemy.isAlive() && Math.sqrt(dx * dx + dy * dy) < 20;
+            return enemy.isAlive() && Math.sqrt(dx * dx + dy * dy) < 30;
         }
 
         public boolean isActive() {

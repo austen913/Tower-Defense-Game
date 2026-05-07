@@ -87,7 +87,7 @@ public class GameView extends JFrame {
             for (GameModel.Enemy enemy : model.getEnemies()) {
                 double progress = enemy.getProgress();
                 double x = 50 + (progress / 1000.0) * 700;
-                g.fillOval((int) x - 10, 155, 20, 20);
+                g.fillOval((int) x - 20, 145, 40, 40);
             }
         }
 

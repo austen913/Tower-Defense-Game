@@ -48,3 +48,8 @@ Prompt 3: I want there to be a 1 second delay before being able to shoot again
 
 Result: there is a delay between shots
 
+Prompt 4: i want the enemies to be twice as big
+
+Result: the enemies are bigger now
+
+Prompt 5:
