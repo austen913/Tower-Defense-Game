@@ -202,7 +202,7 @@ public class GameModel {
         }
 
         public void updatePosition(int waveNumber) {
-            double speed = 1.0 + (waveNumber * 0.05);
+            double speed = 2.5 + (waveNumber * 0.10);
             progress += speed;
         }
 
