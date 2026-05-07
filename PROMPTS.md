@@ -67,3 +67,7 @@ Result: upgrading now adds an extra bullet. it shoots in a spread patter.
 Prompt 8: I want the enemies to have take an extra hit every 5 waves
 
 Result: enemies get more hp every 5 waves
+
+Prompt 9: I want to add an option to restart the game by pressing R. it should show up on the game over screen.
+
+Result: when the game over screen pops up you can press R to restart instead of having to close the window and open a new one.

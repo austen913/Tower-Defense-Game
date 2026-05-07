@@ -113,6 +113,8 @@ public class GameView extends JFrame {
             if (model.isGameOver()) {
                 g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 36));
                 g.drawString("GAME OVER", 300, 320);
+                g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 20));
+                g.drawString("Press R to restart", 280, 360);
             }
         }
     }

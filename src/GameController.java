@@ -38,6 +38,9 @@ public class GameController {
                     case KeyEvent.VK_E:
                         handleUpgrade();
                         break;
+                    case KeyEvent.VK_R:
+                        handleRestart();
+                        break;
                     default:
                         break;
                 }
@@ -61,6 +64,15 @@ public class GameController {
 
     private void handleUpgrade() {
         model.upgradeTower();
+    }
+
+    private void handleRestart() {
+        if (model.isGameOver()) {
+            model.initializeGame();
+            view.setTitle("Tower Defense Game");
+            view.render();
+            gameTimer.start();
+        }
     }
 
     private class GameLoop implements ActionListener {
