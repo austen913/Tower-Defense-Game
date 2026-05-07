@@ -92,3 +92,6 @@ Fix: can you shift every control up a little bit, the bottom is being cut off be
 
 Result: all controls are displayed
 
+Prompt 12: the green circles at the start and the end should be the same size as the enemies. they should also be centered in the middle of the track as well.
+
+Result: green circles that show the start and the end of the track look better

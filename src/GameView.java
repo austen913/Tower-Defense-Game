@@ -65,8 +65,8 @@ public class GameView extends JFrame {
             g.fillRect(50, 150, 700, 30);
 
             g.setColor(Color.GREEN);
-            g.fillOval(45, 145, 10, 10);
-            g.fillOval(750, 145, 10, 10);
+            g.fillOval(30, 145, 40, 40);
+            g.fillOval(730, 145, 40, 40);
         }
 
         private void drawTower(Graphics g) {
